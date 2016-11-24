@@ -4,8 +4,8 @@ This image runs Caddyserver as a simple proxy. By setting two environment variab
 
 By default this proxy points from localhost:80 to web:8000 and does not enable Let's Encrypt. To alter this behavior, set these environment variables:
 
-- `PROXY_FROM` <domain>
-- `PROXY_TO` <local>:<port>
+- `PROXY_FROM` domain
+- `PROXY_TO` local:port
 - `ACME_EMAIL` <email@example.com>
 
 PROXY_FROM _can_ be set to a specific port, but this may break Let's Encrypt certificates. To leave Let's Encrypt disabled, set ACME_EMAIL to "off" (or leave it at the default).
