@@ -1,4 +1,4 @@
-#!/usr/bin/dumb-init /bin/sh
+#!/bin/sh
 ./conf-builder.sh
 
 echo Starting Caddy

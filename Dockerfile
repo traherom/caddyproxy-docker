@@ -30,4 +30,5 @@ RUN curl --silent --show-error --fail --location \
 COPY entry-point.sh /entry-point.sh
 COPY conf-builder.sh /conf-builder.sh
 
+ENTRYPOINT ["/usr/bin/dumb-init"]
 CMD ["/entry-point.sh"]
