@@ -16,6 +16,11 @@ LABEL caddy_version="0.9.3" architecture="amd64"
 RUN apk add --no-cache openssh-client git tar curl
 
 RUN curl --silent --show-error --fail --location \
+    -o /usr/bin/dumb-init \
+    "https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64" \
+  && chmod 0755 /usr/bin/dumb-init
+
+RUN curl --silent --show-error --fail --location \
       --header "Accept: application/tar+gzip, application/x-gzip, application/octet-stream" -o - \
       "https://caddyserver.com/download/build?os=linux&arch=amd64&features=" \
     | tar --no-same-owner -C /usr/bin/ -xz caddy \

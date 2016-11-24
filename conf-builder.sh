@@ -1,5 +1,5 @@
 #!/bin/sh
-echo Rebuilding Caddyfilet to $CADDYFILE
+echo Rebuilding Caddyfile to $CADDYFILE
 
 cat >"$CADDYFILE" <<EOF
 $PROXY_FROM {
@@ -13,4 +13,4 @@ $PROXY_FROM {
 }
 EOF
 
-echo "$CADDYFILE"
+cat "$CADDYFILE"
