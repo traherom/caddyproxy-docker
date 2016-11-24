@@ -1,6 +1,6 @@
 # Local work
 build: 
-	docker build -t traherom/caddyproxy:latest .
+	docker build -t traherom/caddyproxy-docker:latest .
 
 run: build
-	docker run -it traherom/caddyproxy
+	docker run -it traherom/caddyproxy-docker
