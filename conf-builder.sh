@@ -4,6 +4,7 @@ echo Rebuilding Caddyfile to $CADDYFILE
 cat >"$CADDYFILE" <<EOF
 $PROXY_FROM {
   tls $ACME_EMAIL
+  gzip
 
   proxy / $PROXY_TO {
     header_upstream Host {host}
