@@ -2,6 +2,7 @@ FROM alpine:3.4
 MAINTAINER Ryan Morehart <ryan@moreharts.com>
 
 ENV CADDYFILE /etc/Caddyfile
+ENV MAX_CERTS 1
 ENV PROXY_FROM localhost:80
 ENV PROXY_TO web:8000
 ENV ACME_EMAIL off

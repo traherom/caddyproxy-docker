@@ -7,10 +7,13 @@ By default this proxy points from localhost:80 to web:8000 and does not enable L
 - `PROXY_FROM` domain
 - `PROXY_TO` local:port
 - `ACME_EMAIL` <email@example.com>
+- `MAX_CERTS` If set to >1, enables "on-demand" certificates, allowing Caddy to obtain certificates as domains are requested. See the [0.8.2 release notes](https://caddyserver.com/blog/caddy-0_8_2-released) for the initial idea.
 
 PROXY_FROM _can_ be set to a specific port, but this may break Let's Encrypt certificates. To leave Let's Encrypt disabled, set ACME_EMAIL to "off" (or leave it at the default).
 
 For example, Google might use this by setting `PROXY_FROM = www.google.com` and `ACME_EMAIL = larry@google.com`.
+
+For development, you may want to set `PROXY_FROM = :80`. This will allow Caddy to be accessible from any host, useful if you're using other devices/VMs to access the dev site.
 
 # Saving Certificates
 Let's Encrypt certificates are saved by default to `$HOME/.caddy`. *You should mount this as a volume.* If you do not, you risk overrunning your LE limit.
