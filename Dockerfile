@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:3.6
 MAINTAINER Ryan Morehart <ryan@moreharts.com>
 
 ENV CADDYFILE /etc/Caddyfile
@@ -23,7 +23,7 @@ RUN curl --silent --show-error --fail --location \
 
 RUN curl --silent --show-error --fail --location \
       --header "Accept: application/tar+gzip, application/x-gzip, application/octet-stream" -o - \
-      "https://caddyserver.com/download/build?os=linux&arch=amd64&features=" \
+      "https://caddyserver.com/download/linux/amd64" \
     | tar --no-same-owner -C /usr/bin/ -xz caddy \
  && chmod 0755 /usr/bin/caddy \
  && /usr/bin/caddy -version
