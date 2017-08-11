@@ -10,9 +10,7 @@ tls $ACME_EMAIL {
 gzip
 
 proxy / $PROXY_TO {
-  header_upstream Host {host}
-  header_upstream X-Real-IP {remote}
-  header_upstream X-Forwarded-Proto {scheme}
+  transparent
 }
 EOF
 
@@ -23,9 +21,7 @@ $PROXY_FROM {
   gzip
 
   proxy / $PROXY_TO {
-    header_upstream Host {host}
-    header_upstream X-Real-IP {remote}
-    header_upstream X-Forwarded-Proto {scheme}
+    transparent
   }
 }
 EOF
